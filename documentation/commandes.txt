@@ -1,0 +1,9 @@
+1. npm install express sequelize mysql2 cors --save
+2. Install sequelize-cli
+      npm install --save-dev sequelize-cli
+3. Generer l'architecture:
+     npx sequelize-cli init
+4. Creer un model et migration
+    npx sequelize-cli model:generate --name Personnes --attributes nom:string,prenom:string,telephone:string,pays:string,region:string,adresse:string,profile:string,etat:boolean               
+    npx sequelize-cli model:generate --name Animales --attributes nom:string,age:integer,matricule:string,couleur:string,etat:boolean               
+    npx sequelize-cli model:generate --name Fermes --attributes nom:string,telephone:string,adresse:string,region:string,ville:string,etat:boolean               
