@@ -3,32 +3,35 @@ const models = require('../models');
 
 module.exports = {
 
-    getFermes: (req, res) => {
-        models.Fermes.findAll().then((ferme) => {
+    getPersonnes: (req, res) => {
+        models.Personnes.findAll().then((data) => {
             // console.log('Toutes les users : ', users);
-            return res.status(200).json(ferme);
+            return res.status(200).json(data);
         }).catch(err => {
             return res.status(500).json('erreur de recuperation des données de la base')
         })
     },
 
 
-    createFerme: (req, res) => {
-        const { nom, telephone, adresse, region, ville } = req.body
-        models.Fermes.create(
+    createPersonne: (req, res) => {
+        const { nom, prenom, telephone, region, adresse, pays, profile, etat } = req.body
+        models.Personnes.create(
             {
-                nom: nom,
-                telephone: telephone,
-                adresse: adresse,
-                region: region,
-                ville: ville,
 
+                nom: nom,
+                prenom: prenom,
+                telephone: telephone,
+                region: region,
+                adresse: adresse,
+                pays: pays,
+                profile: profile,
+                etat: etat
             },
 
         ).then((data) => {
             return res.status(201).json(data);
         }).catch((err) => {
-            return res.status(500).json('erreur de création des données')
+            return res.status(500).json('erreur de création de personne')
         })
     }
 }

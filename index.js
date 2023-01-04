@@ -3,6 +3,7 @@ const routes = require('./routes')
 const bodyParser = require('body-parser')
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger_output.json');
+const models = require('./models')
 const morgan = require('morgan');
 const app = express()
 const port = 8080
@@ -14,6 +15,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-// app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World!'))
+// models.sequelize.sync()
 app.use('/api', routes);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

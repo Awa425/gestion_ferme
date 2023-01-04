@@ -3,7 +3,12 @@
       npm install --save-dev sequelize-cli
 3. Generer l'architecture:
      npx sequelize-cli init
-4. Creer un model et migration
+4. Creation des models 
     npx sequelize-cli model:generate --name Personnes --attributes nom:string,prenom:string,telephone:string,pays:string,region:string,adresse:string,profile:string,etat:boolean               
     npx sequelize-cli model:generate --name Animales --attributes nom:string,age:integer,matricule:string,couleur:string,etat:boolean               
     npx sequelize-cli model:generate --name Fermes --attributes nom:string,telephone:string,adresse:string,region:string,ville:string,etat:boolean               
+    npx sequelize-cli model:generate --name Employes --attributes salaire:string               
+    npx sequelize-cli model:generate --name Veterinaires --attributes specialite:string               
+    npx sequelize-cli model:generate --name Fermiers --attributes attribut:string               
+    npx sequelize-cli model:generate --name FermeVeterinaire --attributes idFerme:integer,idVeterinaire:integer               
+    npx sequelize-cli model:generate --name FermeFermier --attributes idFerme:integer,idFermier:integer               

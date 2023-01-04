@@ -2,20 +2,16 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('Employes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      email: {
+      salaire: {
         type: Sequelize.STRING
       },
-      password: {
-        type: Sequelize.STRING
-      },
-      profile: Sequelize.STRING,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -27,25 +23,13 @@ module.exports = {
         defaultValue: new Date()
       }
     });
-    await queryInterface.bulkInsert('Users', [
-      {
-        email: 'test@example.com',
-        password: 'ok',
-        profile: "ROLE_FERMIER",
-      },
-      {
-        email: 'test1@example.com',
-        password: 'ok',
-        profile: "ROLE_VETERINAIRE",
-      },
-      {
-        email: 'test2@example.com',
-        password: 'ok',
-        profile: "ROLE_FOURNISSEUR",
-      }
+    await queryInterface.bulkInsert('Employes', [
+      { salaire: 'salaire A' },
+      { salaire: 'salaire A' },
+      { salaire: 'salaire C' }
     ])
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Employes');
   }
 };

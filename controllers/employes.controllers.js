@@ -3,26 +3,21 @@ const models = require('../models');
 
 module.exports = {
 
-    getFermes: (req, res) => {
-        models.Fermes.findAll().then((ferme) => {
+    getEmployes: (req, res) => {
+        models.Employes.findAll().then((data) => {
             // console.log('Toutes les users : ', users);
-            return res.status(200).json(ferme);
+            return res.status(200).json(data);
         }).catch(err => {
             return res.status(500).json('erreur de recuperation des données de la base')
         })
     },
 
 
-    createFerme: (req, res) => {
-        const { nom, telephone, adresse, region, ville } = req.body
-        models.Fermes.create(
+    createEmployes: (req, res) => {
+        const { salaire } = req.body
+        models.Employes.create(
             {
-                nom: nom,
-                telephone: telephone,
-                adresse: adresse,
-                region: region,
-                ville: ville,
-
+                salaire: salaire,
             },
 
         ).then((data) => {

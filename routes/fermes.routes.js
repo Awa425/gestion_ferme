@@ -5,7 +5,7 @@ const fermesCtrl = require('../controllers/fermesControllers');
 const fermes = express.Router();
 
 fermes.get('/fermes', fermesCtrl.getFermes);
-// user.post('/animaux', animauxCtrl.);
+fermes.post('/fermes', fermesCtrl.createFerme);
 
 
 module.exports = fermes
