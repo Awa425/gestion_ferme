@@ -12,7 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Animales)
+      this.belongsToMany(models.Veterinaires, { through: 'FermeVeterinaire' })
       this.hasMany(models.FermeVeterinaire)
+
     }
   }
   Fermes.init({

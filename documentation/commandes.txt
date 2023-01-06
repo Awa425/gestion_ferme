@@ -11,4 +11,5 @@
     npx sequelize-cli model:generate --name Veterinaires --attributes specialite:string               
     npx sequelize-cli model:generate --name Fermiers --attributes attribut:string               
     npx sequelize-cli model:generate --name FermeVeterinaire --attributes idFerme:integer,idVeterinaire:integer               
-    npx sequelize-cli model:generate --name FermeFermier --attributes idFerme:integer,idFermier:integer               
+    npx sequelize-cli model:generate --name FermeFermier --attributes fermeId:integer,fermierId:integer               
+    npx sequelize-cli model:generate --name fermesEmployes --attributes fermeId:integer,employeId:integer               

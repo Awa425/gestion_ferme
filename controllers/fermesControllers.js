@@ -4,8 +4,20 @@ const models = require('../models');
 module.exports = {
 
     getFermes: (req, res) => {
-        models.Fermes.findAll().then((ferme) => {
-            // console.log('Toutes les users : ', users);
+        models.Fermes.findAll(
+            {
+                attribut: ['id', 'nom'],
+                include: [
+                    {
+                        model: models.FermeVeterinaire
+                    },
+                    {
+                        model: models.Veterinaires
+                    },
+                ]
+            }
+        ).then((ferme) => {
+
             return res.status(200).json(ferme);
         }).catch(err => {
             return res.status(500).json('erreur de recuperation des données de la base')

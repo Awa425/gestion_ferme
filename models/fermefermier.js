@@ -11,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // this.belongsTo(models.Fermes)
+      // this.belongsTo(models.Fermier)
     }
   }
   FermeFermier.init({
-    fermeId: DataTypes.INTEGER,
-    fermierId: DataTypes.INTEGER
+    // fermeId: DataTypes.INTEGER,
+    // fermierId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'FermeFermier',

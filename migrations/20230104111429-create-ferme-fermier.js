@@ -9,25 +9,25 @@ module.exports = {
       //   primaryKey: true,
       //   type: Sequelize.INTEGER
       // },
-      idFerme: {
-        foreignKey: true,
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Fermes',
-          key: 'id',
+      // idFerme: {
+      //   foreignKey: true,
+      //   allowNull: false,
+      //   type: Sequelize.INTEGER,
+      //   references: {
+      //     model: 'Fermes',
+      //     key: 'id',
 
-        },
-      },
-      idFermier: {
-        foreignKey: true,
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Fermiers',
-          key: 'id',
-        },
-      },
+      //   },
+      // },
+      // idFermier: {
+      //   foreignKey: true,
+      //   allowNull: false,
+      //   type: Sequelize.INTEGER,
+      //   references: {
+      //     model: 'Fermiers',
+      //     key: 'id',
+      //   },
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -40,8 +40,8 @@ module.exports = {
       }
     });
     await queryInterface.bulkInsert('FermeFermiers', [{
-      idFerme: 1,
-      idFermier: 1,
+      // idFerme: 1,
+      // idFermier: 1,
     }])
   },
   async down(queryInterface, Sequelize) {

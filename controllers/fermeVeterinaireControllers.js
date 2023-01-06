@@ -5,18 +5,19 @@ module.exports = {
 
     getFermeVeterinaire: (req, res) => {
         models.FermeVeterinaire.findAll(
-            // {
-                // include: [
-                //     {
-                //         model: models.Fermes,
-                //         attributes: ['id']
-                //     },
-                //     {
-                //         model: models.Veterinaires,
-                //         attributes: ['id']
-                //     },
-                // ],
-            // }
+            {
+                attributes: ['id'],
+                include: [
+                    {
+                        model: models.Fermes,
+                        // attributes: ['id', '']
+                    },
+                    {
+                        model: models.Veterinaires,
+                        // attributes: ['id']
+                    },
+                ],
+            }
         ).then((data) => {
             return res.status(200).json(data);
         }).catch(err => {
